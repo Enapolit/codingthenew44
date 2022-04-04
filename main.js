@@ -37,5 +37,9 @@ inputs.forEach(function (input) {
       const peapod_cost =  input_value * peapod_price;
       const peapod_span = peapod.querySelector("span");
       peapod_span.innerHTML = amazon_cost;
+     
+     amazon.classList.add("active");
+     freshdirect.classList.add("active");
+     peapod.classList.add("active); 
  });
 })
