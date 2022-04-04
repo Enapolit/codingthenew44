@@ -13,3 +13,29 @@ function round_number(num) {
 
     return num;
 }
+
+const inputs = document.querySelectorAll("[name='qty']");
+inputs.forEach(function (input) {
+ input.addEventListener("change", function (e) {
+     const this_input = e.target; 
+     const input_value = parseFloat (this_input.value);
+     const this_row = this_input.closest(".row");
+  const amazon = this_row.querySelectory(".amazon");
+  const amazon_price = parseFloat (amazon.dataset.price);
+  const amazon_cost =  input_value * amazon_price;
+  const amazon_span = amazon.querySelector("span");
+     
+     
+      const freshdirect = this_row.querySelectory(".freshdirect");
+      const freshdirect_price = parseFloat (freshdirect.dataset.price);
+      const freshdirect_cost =  input_value * freshdirect_price;
+      const freshdirect_span = freshdirect.querySelector("span");
+     
+     
+      const peapod = this_row.querySelector(".peapod");
+      const peapod_price = parseFloat (peapod.dataset.price);
+      const peapod_cost =  input_value * peapod_price;
+      const peapod_span = peapod.querySelector("span");
+     
+ });
+})
